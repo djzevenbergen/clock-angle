@@ -12,8 +12,6 @@ class Clock
     Console.WriteLine("yeah, we weren't kidding. Give us those dang minutes between 0-59");
     int minute = int.Parse(Console.ReadLine());
 
-
-
     double diffDegrees = (FindDiff(hour, minute));
 
     Console.WriteLine("There are " + diffDegrees + " degrees between the clock hands.");
@@ -45,11 +43,16 @@ class Clock
     {
       difference = difference * -1;
     }
+
+    if (difference > 180)
+    {
+      difference = difference - 360;
+      difference = difference * -1;
+    }
+
+
     return difference;
-
   }
-
-
 }
 
 
